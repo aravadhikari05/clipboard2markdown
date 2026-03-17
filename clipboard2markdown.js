@@ -55,6 +55,13 @@
     },
 
     {
+      filter: ['u', 'ins'],
+      replacement: function (content) {
+        return '<u>' + content + '</u>';
+      }
+    },
+
+    {
       filter: function (node) {
         var hasSiblings = node.previousSibling || node.nextSibling;
         var isCodeBlock = node.parentNode.nodeName === 'PRE' && !hasSiblings;
